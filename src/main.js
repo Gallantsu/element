@@ -19,6 +19,8 @@ Vue.use(ElementUI)
 //状态管理器初始化
 let store = new Vuex.Store(storeData)
 
+var ket = 1;
+
 
 Vue.config.productionTip = false
 
