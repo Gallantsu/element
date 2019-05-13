@@ -1,6 +1,5 @@
 // The Vue build version to load with the `import` command
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
-import 'babel-polyfill'
 import Vue from 'vue'
 import Vuex from 'vuex'
 import App from './App'
@@ -20,10 +19,9 @@ Vue.use(ElementUI)
 //状态管理器初始化
 let store = new Vuex.Store(storeData)
 
-var ket = 1;
-
-
 Vue.config.productionTip = false
+
+var uui = 9;
 
 /* eslint-disable no-new */
 new Vue({
