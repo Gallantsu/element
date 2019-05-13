@@ -20,6 +20,7 @@ Vue.use(ElementUI)
 //状态管理器初始化
 let store = new Vuex.Store(storeData)
 
+let ddd = 9
 
 Vue.config.productionTip = false
 
