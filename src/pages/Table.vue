@@ -92,6 +92,10 @@
 		@size-change="handleSizeChange"
 		@current-change="handleCurrentChange"
 		></el-pagination>
+		 <el-date-picker
+			v-model="value9"
+			type="date">
+		</el-date-picker>
 	</div>
 </template>
 
@@ -126,7 +130,8 @@
 						{required:true,message:"请输入用户名",trigger:"blur"},
 						{validator:checkName,trigger:"blur"},
 					]
-				}
+				},
+				value9:"2019-1-1"
 			}
 		},
 		computed:{
