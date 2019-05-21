@@ -34,6 +34,7 @@
     
   </el-table>
   <div>{{date0}}</div>
+  <button @click="changeData">1111</button>
   </div>
 </template>
 
@@ -63,7 +64,9 @@
       }
     },
     methods: {
-     
+     changeData(){
+       this.tableData[0].name = "suyong"
+     }
     },
     components:{
       'dy-com':{
@@ -80,9 +83,25 @@
           val:[String]
         },
         render(createEle,context){
+          let attrObj = {};
           function getComponet(){
             if(context.props.name == 'date'){
+              attrObj = {
+              value:context.props.val,
+              type:'date',
+              placeholder:"选择日期"
+            };
               return "el-date-picker"
+            }else if(context.props.name == 'name'){
+              attrObj = {
+              value:context.props.val
+              };
+              return 'el-input'
+            }else if(context.props.name == 'address'){
+              attrObj = {
+              value:context.props.val
+              };
+              return 'el-input'
             }
           }
           return createEle(getComponet(),{
@@ -91,11 +110,7 @@
                 context.parent[context.props.name+context.props.num] = val;
               }
             },
-            attrs:{
-              value:context.props.val,
-              type:'date',
-              placeholder:"选择日期"
-            }
+            attrs:attrObj
           },context.children);
         }
       }
